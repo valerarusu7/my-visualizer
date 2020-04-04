@@ -5,6 +5,8 @@ import { getBubbleSortAnimations } from "../../SortingAlgorithms/bubbleSortAlgo"
 import { getInsertionSortAnimations } from "../../SortingAlgorithms/insertionSortAlgo";
 import { getSelectionSortAnimations } from "../../SortingAlgorithms/selectionSortAlgo";
 
+import Aux from '../../hoc/Auxiliar';
+
 import "./SortingChart.css";
 
 const NUMBER_OF_ARRAY_BARS = window.screen.width / 5.5;
@@ -194,6 +196,7 @@ class SortingChart extends Component {
     const { array } = this.state;
 
     return (
+      <Aux>
       <div className="array-display">
         <div className="top-bar-buttons">
           <button className="myButton" onClick={() => this.resetArray()}>Generate New Array</button>
@@ -216,6 +219,8 @@ class SortingChart extends Component {
           ))}
         </div>
       </div>
+
+      </Aux>
     );
   }
 }
